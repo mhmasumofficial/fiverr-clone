@@ -1,0 +1,56 @@
+$navbar-color: #013914;
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $navbar-color;
+  color: white;
+
+  .container {
+    width: 1200px;
+
+    .wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+    .logo {
+      font-size: 34px;
+      font-weight: bold;
+
+      .logo-text {
+      }
+
+      .dot {
+        color: #1dbf73;
+      }
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 500;
+
+      button {
+        color: white;
+        border: 1px solid white;
+        border-radius: 5px;
+        background: transparent;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 500;
+
+        &:hover {
+          background: #1dbf73;
+          border-color: #1dbf73;
+        }
+      }
+    }
+  }
+}
