@@ -1,9 +1,20 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Navbar.scss";
 
 function Navbar() {
   const [active, setActive] = useState(false);
 
+  const isActive = () => {
+    window.scrollY > 0 ? setActive(true) : setActive(false)
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', isActive);
+
+    return () =>{
+      window.removeEventListener('scroll', isActive);
+    }
+  },[])
   
 
   return (
@@ -26,17 +37,15 @@ function Navbar() {
       </div>
 
       <hr />
-      <div className="menu">
+      {active && <div className="menu">
         <span>Graphics & Design</span>
         <span>Video & Animation</span>
         <span>Writing & Translation</span>
         <span>AI Services</span>
         <span>Digital Marketing</span>
-        <span>Music & Audio</span>
         <span>Programming & Tech</span>
         <span>Business</span>
-        <span>Lifestyle</span>
-      </div>
+      </div>}
     </div>
   );
 }
